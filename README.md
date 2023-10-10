@@ -17,6 +17,7 @@ In the data file:
 -0.85 0.58 -6.29
 
 Explanation: 
+
 Each line of the file contains 3 real numbers:
   • The first number represents the percentage price change from one day to the next of the S&P
 500 stock index.
@@ -35,12 +36,19 @@ Instruction to use:
 
 e.g:
 Please enter the number of chromosomes: 100
+
 The initial Population will be: 100
+
 Please enter the number of X(0-100%): 10
+
 X will be 10 %
+
 Please enter the number of Z(0-100%): 10
-Z will be 10 %
+
+Z will be 10 % 
+
 Please enter the data name .txt(must be on the current directory): data1.txt
+
 Your data file name data1.txt
 Please input crossover algorithm(u=uniform,k=kpoint):u
 The crossover algorithm is uniform
