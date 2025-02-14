@@ -1,87 +1,55 @@
-# Implement Genetic-Algorithms
+# Genetic Algorithm
 
-## Files Structure
+Author: Yucheng An 
 
-`GA.py`: Source-code built by Python3
+[Genetic Algorithm Practice Project](GA-Practice/README.md)
 
-`genAlgData1.txt` and `genAlgData2.txt `contain training data based on 30 years of price data for the S&P 500.
+![Output.gif](Output.gif)
+![test.PNG](test.PNG)
 
----
+## What is this...
+This project implements a Genetic Algorithm (GA) to evolve an image based on a given target image. The algorithm iteratively refines a population of candidate images until they closely resemble the target. A .gif is generated to visualize the evolution process.
 
-## Example of training data:
+## Dependencies
+To install related libraries
 
--0.12 -0.81 -6.8
+`pip install Pillow colour numpy matplotlib argparse`
 
--0.81 -0.41 5.2
+Required library:
+* Pillow
+* colour
+* numpy
+* random
+* matplotlib.pyplot
+* argparse
 
--0.41 0.32 -3.21
+## Run Code
+Please run command as: test.png 
 
-0.32 -0.2 -4.48
+>**Note**: Input Image must .png format
 
-.....
+`python3 main.py test.png`
 
----
+>**_Note:_** Please make sure work directory includes an empty directory named "PicturesOutput"
+This directory will save every 50 generation of smallest fitness image
 
-## Explanation: 
 
-Each row of the file contains `3` real numbers:
+## Detail Usage
+After running `python3 main.py test.png`
 
-  • The `first` number represents the percentage price change from one day to the next of the S&P
-500 stock index.
+The terminal will have instruction as:
 
-  • The `second` number represents the percentage price change on the following day.
-  
-  • The `third` number represents the profit in dollars that you would have made if you had bought an ETF of the stock market index and held it for one day 
-  **(negative numbers represent losing money)**.
+Please input the number of initial population (Integer): _userinput_
 
----
+Please input the number of generation (Integer): _userinput_
 
-## Instruction to use:
+--------------------------------------------------------------------------
+For faster computing, program will resize input file as 200 * 200 Pixel
 
-1. Repo clone:
+You can change parameter in line:
 
-```bash
-git clone https://github.com/Yucheng-An/Genetic-Algorithms.git
-```
+`self.targetImage = image.resize((200, 200))`
 
-2. Access work directory:
-
-```bash
-cd Genetic-Algorithms
-```
-
-3. Run `GA.py`
-
-```bash
-python3 GA.py
-```
-
-4. Follow the instructions and input the value
-
-Example: `genAlgData1.txt` or `genAlgData2.txt`
-
-    Please enter the number of chromosomes: 100
-    The initial Population will be: 100
-    Please enter the number of X(0-100%): 10
-    X will be 10 %
-    Please enter the number of Z(0-100%): 10
-    Z will be 10 % 
-    Please enter the data name .txt(must be on the current directory): genAlgData1.txt
-    Your data file name genAlgData1.txt
-    Please input crossover algorithm(u=uniform,k=kpoint):u
-    The crossover algorithm is uniform
-    Please input the number of generations you want(Integer):100
-    100  generations you want to create.
-    Every 10 Generation state(Min,Max,Average) [-2278.13, 4182.46, 627.6]
-    Every 10 Generation state(Min,Max,Average) [-816.38, 4358.92, 956.95]
-    Every 10 Generation state(Min,Max,Average) [-572.97, 4540.3, 1018.74]
-    Every 10 Generation state(Min,Max,Average) [-695.34, 4444.36, 918.1]
-    Every 10 Generation state(Min,Max,Average) [-709.11, 4546.03, 936.7]
-    Every 10 Generation state(Min,Max,Average) [-523.7, 4291.81, 957.63]
-    Every 10 Generation state(Min,Max,Average) [-672.28, 4253.16, 964.94]
-    Every 10 Generation state(Min,Max,Average) [-721.25, 4400.01, 1029.82]
-    Every 10 Generation state(Min,Max,Average) [-692.56, 4551.64, 1042.95]
-    From the final generation:
-    The Highest fitness score:  4618.97
-    The Highest fitness chromosome: [-0.73, 1.36, -2.02, 1.15, 0.0]
-
+--------------------------------------------------------------------------
+> _**Note:**_ Program will generate a named Output.gif file for
+every 50 generation of smallest fitness image as gif file after Genetic Algorithm processing
